@@ -1,4 +1,4 @@
-# Rally Supply POS · TFA4
+# Rally Supply POS - TFA4
 
 **Technical Formative Assessment 4: Sessions and Authentication**
 
@@ -6,29 +6,6 @@ Rally Supply carries the TFA3 pickleball shop and POS into TFA4. Staff sign in
 with a username and password; a CodeIgniter filter protects customer and user
 account management. Password hashes, the MySQL database, and browser sessions
 are included in this project’s setup.
-
-## Cover sheet
-
-- Student/Group name: **[Complete before submission]**
-- Member 1 and role: **[Complete before submission]**
-- Member 2 and role: **[Complete before submission]**
-- Section: **[Complete before submission]**
-- Professor: **[Complete before submission]**
-
-## Submission links
-
-- GitHub repository: **[Add after creating the repository]**
-- Hosted application: **[Add after deployment]**
-
-## Demo sign-in
-
-- Username: `courtadmin`
-- Password: `RallyDemo4!`
-
-This shared password is for the local classroom demonstration only. The
-`.env.example` contains the same demo default so the seeder can hash it for
-each fictional staff account. Change it in `.env` before seeding a private
-copy. The database and SQL export contain only password hashes.
 
 ## Features
 
@@ -70,33 +47,6 @@ project and the default XAMPP database are not overwritten. It creates the
 private `.env`, runs migrations, and seeds sample accounts and products on each
 start. Re-running the seeder keeps existing roster/catalog records and resets
 seeded staff passwords to the `.env` demo password.
-
-## Set up manually
-
-### Option A: migrations and seeder
-
-1. Install PHP 8.2+, Composer, MySQLi, `intl`, `mbstring`, and GD.
-2. Create a new MySQL database named `rally_supply_ta4` with `utf8mb4`.
-3. Copy `.env.example` to `.env`; set `app.baseURL`, database host, database
-   name, username, password, and port for your environment.
-4. Set `demo.password` in `.env` to a classroom-only password of at least eight
-   characters.
-5. Run `composer install`.
-6. Run `php spark migrate --all`.
-7. Run `php spark db:seed RallySupplySeeder`.
-8. Run `php spark serve --host 127.0.0.1 --port 8085`.
-9. Open `http://localhost:8085/` and sign in as `courtadmin` with the
-   `demo.password` value.
-
-### Option B: import the full SQL export
-
-1. Create and select a new `rally_supply_ta4` database in phpMyAdmin.
-2. Choose **Import**, select `database/rally_supply.sql`, and run the import.
-3. Copy `.env.example` to `.env` and enter the same database connection details.
-4. Run `composer install`, then start the site with `php spark serve --host
-   127.0.0.1 --port 8085`.
-5. Sign in with the demo credentials above. The SQL file contains the sample
-   data and matching password hashes; it does not contain plaintext passwords.
 
 ## How authentication works
 
